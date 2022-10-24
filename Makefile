@@ -63,7 +63,7 @@ BIN=    $(BINDIR)/$(NAME).$(NAMEEXT)
 .PHONY: default clean depend tgz
 
 #no make plus parameter than you do this
-default: objdir_mk depend bin
+default: objdir_mk bindir_mk depend bin
 
 clean:
 	@rm -rf $(OBJDIR)
@@ -109,6 +109,10 @@ endif
 objdir_mk:
 	@echo 'Creating $(OBJDIR) ...'
 	@mkdir -p $(OBJDIR)
+
+bindir_mk:
+	@echo 'Creating $(BINDIR) ...'
+	@mkdir -p $(BINDIR)
 
 tgz: clean
 	@echo Making tgz archive
